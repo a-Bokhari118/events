@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'semantic-ui-react';
 import { openModal } from '../../app/common/modals/modalReducer';
 import { decrement, increment } from './testReducer';
+import { toast } from 'react-toastify';
 
 const Sandbox = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,10 @@ const Sandbox = () => {
       <Button
         content='Decrement'
         color='red'
-        onClick={() => dispatch(decrement(10))}
+        onClick={() => {
+          dispatch(decrement(10));
+          toast.error('Somthing wrong happend!!!');
+        }}
       />
       <Button
         content='Open Modal'
