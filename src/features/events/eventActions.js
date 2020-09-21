@@ -44,3 +44,10 @@ export const loadEvent = () => {
     }
   };
 };
+
+export const listenToEvents = (events) => {
+  return {
+    type: FETCH_EVENT,
+    payload: events,
+  };
+};
